@@ -49,9 +49,27 @@ export const store = new Vuex.Store({
             state.todoItems = [];
         },
     },
-    /*actions: {
-        getTodoItems(context) {
-            // contextfh store의 method와 state 접근
+    /*
+    // store.js
+    mutations: {
+        setDate(state, fetchedData) {
+            state.product = fetchedData;
         }
-    }*/
+    },
+    actions: {
+        fetchProductData(context) {
+            return axios.get(apiUrl)
+            .then(reponse => response && response.data || [])
+            .then(data => context.commit("setData", response));
+        }
+    }
+
+    // App.vue
+    methosds: {
+        getProduct() {
+            this.$store.dispatch("fetchProductData");
+        }
+    }
+
+    */
 });
