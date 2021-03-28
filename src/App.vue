@@ -15,14 +15,6 @@ import TodoFooter from './components/TodoFooter';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      todoItems: [],
-    }
-  },
-  methods: {
-    
-  },
   components: {
     TodoHeader,
     TodoInput,
