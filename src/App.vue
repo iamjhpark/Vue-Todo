@@ -12,6 +12,7 @@ import TodoHeader from './components/TodoHeader';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import TodoFooter from './components/TodoFooter';
+// import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -20,7 +21,7 @@ export default {
     TodoInput,
     TodoList,
     TodoFooter,
-  }
+  },
 }
 </script>
 

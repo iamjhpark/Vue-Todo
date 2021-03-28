@@ -1,7 +1,7 @@
 <template>
   <div>
       <ul>
-          <li v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" class="shadow">
+          <li v-for="(todoItem, index) in this.todoItems" v-bind:key="todoItem.item" class="shadow">
               <div class="checkBtn" v-bind:class="{checkBtnCompleted: todoItem.completed}" v-on:click="toggleComplete(todoItem, index)">*</div>
               <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
               <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     methods: {
         removeTodo(todoItem, index) {
@@ -30,6 +32,12 @@ export default {
             this.$store.commit("toggleOneItem", payload);
         },
     },
+    computed: {
+        // ...mapGetters(["storedTodoItems"]),
+        ...mapGetters({
+            todoItems: "storedTodoItems",
+        }),
+    }
 }
 </script>
 

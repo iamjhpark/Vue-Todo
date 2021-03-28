@@ -24,6 +24,11 @@ export const store = new Vuex.Store({
     state: {
         todoItems: storage.fetch(),
     },
+    getters: {
+        storedTodoItems(state) {
+            return state.todoItems;
+        }
+    },
     mutations: {
         // Enhanced Object Literals Application
         addOneItem(state, todoItem) {
@@ -60,7 +65,7 @@ export const store = new Vuex.Store({
         fetchProductData(context) {
             return axios.get(apiUrl)
             .then(reponse => response && response.data || [])
-            .then(data => context.commit("setData", response));
+            .then(data => context.commit("setData", response)); 
         }
     }
 
