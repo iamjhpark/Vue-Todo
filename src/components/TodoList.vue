@@ -13,23 +13,29 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
     methods: {
+        ...mapMutations([
+            "removeOneItem",
+            "toggleOneItem",
+        ]),
         removeTodo(todoItem, index) {
             const payload = {
                 todoItem,
                 index,
             }
-            this.$store.commit("removeOneItem", payload);
+            this.removeOneItem(payload);
+            // this.$store.commit("removeOneItem", payload);
         },
         toggleComplete(todoItem, index) {
             const payload = {
                 todoItem,
                 index,
             }
-            this.$store.commit("toggleOneItem", payload);
+            this.toggleOneItem(payload);
+            // this.$store.commit("toggleOneItem", payload);
         },
     },
     computed: {
