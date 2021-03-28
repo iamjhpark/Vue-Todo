@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     addOneItem: function(todoItem) {
-      let obj = {
+      const obj = {
         completed: false,
         item: todoItem,
       };
