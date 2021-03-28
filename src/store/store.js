@@ -48,5 +48,10 @@ export const store = new Vuex.Store({
             localStorage.clear();
             state.todoItems = [];
         },
-    }
+    },
+    /*actions: {
+        getTodoItems(context) {
+            // contextfh store의 method와 state 접근
+        }
+    }*/
 });
